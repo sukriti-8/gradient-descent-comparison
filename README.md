@@ -57,6 +57,8 @@ that differs is **how much data is used per parameter update**:
 
 ![Loss vs Iterations](results/loss_vs_iterations.png)
 
+
+
 ## 🔍 Observations
 
 - **Batch GD** converges the most **smoothly** — every update uses the true
@@ -104,3 +106,31 @@ Mini-Batch GD — that's the entire difference between the three algorithms.
 - Extend to multivariate linear regression / logistic regression
 - Add momentum, Adam, and other optimizers for a broader comparison
 - Add a learning-rate scheduler and compare its effect on SGD's noise
+
+# Gradient Descent Comparison
+
+A comparative study and interactive implementation of **Batch Gradient Descent, Stochastic Gradient Descent (SGD), and Mini-Batch Gradient Descent** using a simple Linear Regression problem.
+
+The project demonstrates how different Gradient Descent strategies affect the number of parameter updates, convergence behaviour, training time, and final Mean Squared Error (MSE).
+
+---
+
+## 📌 Project Overview
+
+Gradient Descent is an optimization algorithm commonly used to minimize the loss function of machine learning models.
+
+Although Batch Gradient Descent, Stochastic Gradient Descent, and Mini-Batch Gradient Descent all aim to minimize the same loss, they differ in how much training data is used for each parameter update.
+
+In this project, all three methods are implemented from scratch and compared using the same Linear Regression problem.
+
+### Problem Used
+
+The project uses a simple house-price prediction problem:
+
+**Input:** House Area (sq ft)  
+**Target:** House Price
+
+A synthetic dataset is generated using an approximately linear relationship:
+
+```text
+Price = 50 × Area + 50,000 + Noise
