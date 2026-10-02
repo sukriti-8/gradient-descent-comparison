@@ -70,7 +70,7 @@ that differs is **how much data is used per parameter update**:
   more often than Batch GD — in practice, it's the standard choice for
   training most real ML models.
 
-## 🎤 Viva / Quick Reference
+##  Quick Reference
 
 **Q: Why does SGD look noisy?**
 Because each update is based on the gradient of a single sample, which is a
@@ -98,14 +98,6 @@ b := b − lr * dL/db
 `m` is the whole dataset for Batch GD, 1 for SGD, and `batch_size` for
 Mini-Batch GD — that's the entire difference between the three algorithms.
 
-## 👥 Team
-
-| Member | Role |
-|---|---|
-| *(you)* | Implementation, experiments, Streamlit UI, integration |
-| Person 2 | Batch Gradient Descent — theory |
-| Person 3 | Stochastic Gradient Descent — theory |
-| Person 4 | Mini-Batch Gradient Descent — theory |
 
 ## 🔮 Future Scope
 
