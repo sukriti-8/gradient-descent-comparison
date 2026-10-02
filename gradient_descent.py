@@ -34,15 +34,19 @@ def normalize(x):
     return (x - mean) / std, mean, std
 
 
-def denormalize_params(w_norm, b_norm, x_mean, x_std, y_mean=0.0, y_std=1.0):
+def denormalize_params(w_norm, b_norm, x_mean, x_std, y_mean, y_std):
     """
-    Convert (w, b) fitted on normalized x back to a line in *original*
-    area/price units, assuming y itself was NOT normalized (only x was).
-    price = w_norm * (area - x_mean)/x_std + b_norm
-          = (w_norm/x_std) * area + (b_norm - w_norm*x_mean/x_std)
+    Convert parameters learned on normalized x and y
+    back to the original units.
     """
-    w_real = w_norm / x_std
-    b_real = b_norm - w_norm * x_mean / x_std
+
+    w_real = (y_std * w_norm) / x_std
+
+    b_real = (
+        y_mean
+        + y_std * b_norm
+        - w_real * x_mean
+    )
     return w_real, b_real
 
 
